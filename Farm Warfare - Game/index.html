@@ -1,0 +1,482 @@
+<html>
+	<head>
+		<title>Farm Warfare</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css">
+		<link rel="stylesheet" type="text/css" href="css/pp3diso.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="container">
+			<div id="div_login">
+				<form action="" id="loginform">
+					<input type="email" value="" id="mail" name="mail" placeholders="User">
+					<input type="password" value="" id="password" name="password">
+					<input type="submit" value="" id="submitlogin">
+					<input type="button" value="" id="buttonRegister">
+				</form> 
+			</div>
+
+			<script language="javascript"> 
+				function checkPassword() { 
+					if (document.pwForm.newPassword.value != document.pwForm.confirmNewPassword.value) { 
+						alert ('The passwords do not match!');
+						return false; 
+					} 
+				} 
+			</script>
+
+			<div id="div_register">
+					<form action="" id="registerform" method="post" name="pwForm">	
+						<input type="text" value="" id="newPseudo" name="pseudo" />  
+						<input type="text" value="" id="newMail" name="mail" />                   
+						<input type="password" value="" id="newPassword" name="newpassword">    
+						<input type="password" value="" id="confirmNewPassword" name="confirmnewpassword"/>                     
+						<input type="submit" value="" id="submitRegister" onClick="return checkPassword();"/>
+						<input type="submit" value="" id="backRegister">
+
+				</form> 
+			</div>
+
+		
+
+			<div id="menu_market_panel">
+				<div id="market">
+					<input type="button" id="quit_market" value="Quit">
+					 <ul id="tabs">
+						<li><a href="#" name="tab1">Graines</a></li>
+						<li><a href="#" name="tab2">Armes</a></li>
+						<li><a href="#" name="tab3">Energie</a></li>
+						<li><a href="#" name="tab4">Fertilisant</a></li>
+					</ul>
+					<div id="content"> 
+						<div id="tab1">
+					   		<p>Liste des graines :</p>
+							<div style="display:block!important" id="liste_graines" class="listegraines">	
+								
+							</div>
+						</div>
+						<div id="tab2">
+					   		<p>Liste des Armes :</p>
+					   		<div style="display:block!important" id="liste_armes" class="listearmes">
+							
+							</div>
+						</div>
+					
+						<div id="tab3">
+					   		<div style="display:block!important" id="energie" class="energie">
+								
+							</div>
+						</div>	
+						<div id="tab4">
+					   		<div style="display:block!important" id="fertilisant" class="fertilisant">
+					   			<input type='number' id='number_fertilisant' value="1" />
+					   			1 OR
+              				    <input id="market_fertilisant" class="button_market_fertilisant" type="button" value="Acheter fertilisant"  />
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+
+			
+
+			<div id="menu_create_alliance_panel" style="display:none;">
+				Alliance Name : <input type ="text" id="input_alliance_name" maxlength="15"/></br/>
+				<input type="button" id="create_alliance_button" value="Créer une Alliance"/><input type="button" id="hide_create_alliance_button" value="Hide"/>
+			</div>
+			<div id="menu_invit_alliance_panel" style="display:none;">
+				Player Name : <input type ="text" id="input_player_name" maxlength="15"/></br/>
+				<input type="button" id="invit_alliance_button" value="Inviter !"/>
+				<input type="button" id="hide_invit_alliance_button" value="Hide"/>
+			</div>
+			
+			<div id="div_admin">
+				<div id="admin_back">Back</div>
+				<div class="menu_admin">
+					<div class="pre_menu">
+						<div class="bouton_general">General</div>
+						<div class="bouton_user">Gestion Utilisateurs</div>
+						<div class="bouton_content">Gestion Contenu</div>
+					</div>
+					<div class="menu_general">
+						<div class="ListUser">Utilsateurs</div>
+						<div class="UserSpecM">Paramètres Utilsateurs</div>
+						<div class="TilesM">Gestion des Tiles</div>
+						<div class="PluieM">Pluie</div>
+						<div class="TornadeM">Tornade</div>
+						<div class="SauterelleM">Sauterelle</div>
+						<div class="MeteorM">Météorite</div>
+					</div>
+					<div class="menu_user">
+						<div class="AlliancesList">Alliances</div>
+						<div class="ArmesUserM">Armes</div>
+						<div class="ArrosoirsUserM">Arrosoirs</div>
+						<div class="EnergiesUserM">Bâtiments Energies</div>
+						<div class="FruitsUserM">Fruits</div>
+						<div class="GrainesUserM">Graines</div>
+						<div class="MaisonsUserM">Maisons</div>
+						<div class="PlantesUserM">Plantes</div>
+						<div class="StockagesUserM">Bâtiments Stockages</div>
+					</div>
+					<div class="menu_content">
+						<div class="ArmeList">Armes</div>
+						<div class="ArrosoirsSpecM">Arrosoirs</div>
+						<div class="EnergiesSpecM">Bâtiments Energies</div>
+						<div class="FruitSpecM">Fruits</div>
+						<div class="GrainesSpecM">Graines</div>
+						<div class="StockagesSpecM">Bâtiments Stockages</div>
+					</div>
+				</div>
+				<div class="display_admin">
+					<div class="general">
+						<div class="Userlist">
+							<table id="Users">
+
+							</table>
+						</div>
+						<div class="UserSpec">
+							<table id="Users_level_spec">
+
+							</table>
+						</div>
+						<div class="Tiles">
+							<table id="Tiles">
+
+							</table>
+						</div>
+						<div class="Pluie">
+							<table id="Pluie">
+
+							</table>
+						</div>
+						<div class="Tornade">
+							<table id="Tornade">
+
+							</table>
+						</div>
+						<div class="Sauterelle">
+							<table id="Sauterelles">
+
+							</table>
+						</div>
+						<div class="Meteor">
+							<table id="Meteor">
+
+							</table>
+						</div>
+					</div>
+					<div class="user">
+						<div class="Alliances">
+							<table id="Alliances">
+
+							</table>
+						</div>
+						<div class="ArmesUser">
+							<table id="Armes">
+
+							</table>
+						</div>
+						<div class="ArrosoirsUser">
+							<table id="Arrosoirs">
+
+							</table>
+						</div>
+						<div class="EnergiesUser">
+							<table id="Energies">
+
+							</table>
+						</div>
+						<div class="FruitsUser">
+							<table id="Fruits">
+
+							</table>
+						</div>
+						<div class="GrainesUser">
+							<table id="Graines">
+
+							</table>
+						</div>
+						<div class="MaisonsUser">
+							<table id="Maisons">
+
+							</table>
+						</div>
+						<div class="PlantesUser">
+							<table id="Plantes">
+
+							</table>
+						</div>
+						<div class="StockagesUser">
+							<table id="Stockages">
+
+							</table>
+						</div>
+					</div>
+					<div class="contenu">
+						<div class="ArmesSpec">
+							<table id="Armes_spec">
+
+							</table>
+						</div>
+						<div class="ArrosoirsSpec">
+							<table id="Arrosoirs_spec">
+
+							</table>
+						</div>
+						<div class="EnergiesSpec">
+							<table id="Energies_spec">
+
+							</table>
+						</div>
+						<div class="FruitSpec">
+							<table id="Fruits_spec">
+
+							</table>
+						</div>
+						<div class="GrainesSpec">
+							<table id="Graines_spec">
+
+							</table>
+						</div>
+						<div class="StockagesSpec">
+							<table id="Stockages_spec">
+
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div id="user_props"  style="display:none;">
+				<div id="user_level">
+				</div>
+				<div id="user_water">
+				</div>
+				<div id="user_fertilisant">
+				</div>
+				<div id="user_energie">
+				</div>
+				<div id="user_argent">
+				</div>
+				<div id="user_experience">
+				</div>
+				<div id="user_next">
+				</div>
+				<div id="user_max">
+				</div>
+				<div id="user_alliance">
+				</div>
+				<div id="user_life">
+				</div>
+				<div id="user_lifeMax">
+				</div>
+				<div id="conquete_timer">
+					
+				</div>
+				<div id="attack_timer">
+					
+				</div>
+				<div id="defend_timer">
+					
+				</div>
+			</div>
+			<div id="div_play">
+				<div id="ppISO"></div>
+			</div>
+			<div id="div_begin">
+				<div>Bienvenue, <span id="menu_username"></span>.</div>
+				<div id="button_admin">Panel Administrateur</div>
+				<div id="menu_partie"><br>
+					<div id="continue_game_div">Continuer votre partie ? <input type="button" value="Jouer" id="continue_game" /><br></div>
+					<div>Creer une nouvelle partie ? <input type="button" value="Creer" id="new_game"/></div>           
+				</div>
+				<div id="liste_difficult">
+					<p>Niveau de difficulte :</p>
+					<input type="radio" value="1" id="newgame_difficult1" name="newgame_difficult">
+					<label for="newgame_difficult1">Facile</label><br>
+					<input type="radio" value="2" id="newgame_difficult2" name="newgame_difficult">
+					<label for="newgame_difficult2">Normal</label><br>
+					<input type="radio" value="3" id="newgame_difficult3" name="newgame_difficult">
+					<label for="newgame_difficult3">Difficile</label><br>
+					<input type="button" id="submit_newgame" value="Jouer">
+				</div>
+			</div>
+			<div id="instantSell" style="display:none;">
+				<div class="sellMsg">
+					Voulez avez récolté <span id="nbFruits"></span> <span id="nameFruits"></span> !!<br\>
+					Voulez vous les vendre pour <span id="prixFruits"></span> dès maintenant ou bien les conserver (<span id="poidsFruits"></span> unité de stockage)?
+					<span id="timeFruits" style="display:none;"></span>
+					<input id="Sell" type="button" value="Vendre" />
+					<input id="Stack" type="button" value="Conserver" />
+				</div>
+			</div>
+			<div id="chooseStorage" style="display:none;">
+				Choisissez votre batiments de stockages :
+				<select id="storageList">
+					
+				</select>
+				<input id="choosingStorage" type="button" value="Conserver" />
+			</div>
+			<div id="buildingProps" style="display:none;">
+				<input class="HideBuildingProps" type="button" value="Hide" /><input class="RefreshBuildingProps" type="button" value="Refresh" />
+				</br>
+				<input id="clearDeadFruits" type="button" value="Supprimer tous les fruits pourris" /></br> 
+				<div id="buildingInfos">
+				</div><br/>
+				<div id="fruitsList">
+					
+				</div>
+				<input class="HideBuildingProps" type="button" value="Hide" /><input class="RefreshBuildingProps" type="button" value="Refresh" />
+			</div>
+			<div id="houseProps" style="display:none;">
+				<input id="fill_arrosoir" type="button" value="Remplir l'arrosoir" />
+				<input id="hide_house_props" type="button" value="Hide" />
+			</div>
+			<div id="alliance_invit_list" style="display:none;">
+				<input class="HideInvitList" type="button" value="Hide" /><input class="RefreshInvitList" type="button" value="Refresh" />
+				</br>
+				<div id="invitList">
+					
+				</div>
+				<input class="HideInvitList" type="button" value="Hide" /><input class="RefreshInvitList" type="button" value="Refresh" />
+			</div> 
+			<div id="div_menu">
+				<div id="menu_select_type">
+					<div>
+						<input id="gestion_plantes" class="button_menu" type="button" value="Gestion des Plantes" />
+					</div>
+					<div>
+						<input id="gestion_batiments" class="button_menu" type="button" value="Gestion des Batiments" />
+					</div>
+					<div>
+						<input id="gestion_terrains" class="button_menu" type="button" value="Gestion des Terrains" />
+					</div>
+					<div>
+						<input id="gestion_alliances" class="button_menu" type="button" value="Gestion des Alliances" />
+					</div>
+					<div>
+						<input id="menu_market" class="button_menu button_market" type="button" value="Marché" />
+					</div>
+<!-- 					<div>
+						<input id="menu_display_tile_infos" class="button_menu" type="button" value="Afficher les infos de case" />
+					</div> -->
+				</div>
+				<div class="menu_gestion_plantes" id="menu_gestion_plantes_type" style="display:none;">
+					<div>
+						<input id="menu_select_plantes" class="button_menu" type="button" value="Ajouter des plantes" />
+					</div>
+					<div>
+						<input id="menu_arrosage_plantes" class="button_menu" type="button" value="Arroser une plante" />
+					</div>
+					<div>
+						<input id="menu_fertilise_plantes" class="button_menu" type="button" value="Fertiliser une plante" />
+					</div>
+					<div>
+						<input id="menu_recolte_plantes" class="button_menu" type="button" value="Recolter une plante" />
+					</div>
+					<div>
+						<input id="menu_destroy_plantes" class="button_menu" type="button" value="Détruire une plante" />
+					</div>
+				</div>
+				<div class="menu_gestion_batiments" id="menu_gestion_batiments_type" style="display:none;">
+					<div>
+						<input id="menu_select_batiments" class="button_menu" type="button" value="Ajouter des batiments" />
+					</div>
+					<div>
+						<input id="menu_destroy_stockages" class="button_menu" type="button" value="Détruire un bâtiment" />
+					</div>
+				</div>
+				<div class="menu_gestion_terrains" id="menu_gestion_terrains_type" style="display:none;">
+					<div>
+						<input id="menu_select_conquerir" class="button_menu" type="button" value="Conquerir terrain" />
+					</div>
+					<div>
+						<input id="menu_select_attaquer" class="button_menu" type="button" value="Attaquer terrain" />
+					</div>
+					<div>
+						<input id="menu_select_defendre" class="button_menu" type="button" value="Defendre terrain" />
+					</div>
+				</div>
+				<div class="menu_gestion_alliances" id="menu_gestion_alliances_type" style="display:none;">
+					<div>
+						<input id="menu_create_alliance" class="button_menu" type="button" value="Créer une alliance" />
+					</div>
+					<div>
+						<input id="menu_quit_alliance" class="button_menu" type="button" value="Quitter Alliance" />
+					</div>
+					<div>
+						<input id="menu_invit_alliance" class="button_menu" type="button" value="Invitation Alliance" />
+					</div>
+					<div>
+						<input id="menu_get_invit_alliance" class="button_menu" type="button" value="My Invitation Alliance" />
+					</div> 
+				</div>
+
+				<div class="menu_select_options" id="menu_select_plantes_type" style="display:none;">
+					<div>
+						<input id="menu_select_plantes_pasteque" class="button_menu_plantes" type="button" value="Planter une pasteque" style="display:none;"/>
+					</div>
+					<div>
+						<input id="menu_select_plantes_salade" class="button_menu_plantes" type="button" value="Planter des salades" style="display:none;"/>
+					</div>
+					<div>
+						<input id="menu_select_plantes_ananas" class="button_menu_plantes" type="button" value="Planter un ananas" style="display:none;"/>
+					</div>
+					<div>
+						<input id="menu_select_plantes_tomate" class="button_menu_plantes" type="button" value="Planter des tomates" style="display:none;"/>
+					</div>
+					
+					<div>
+						<input id="menu_select_plantes_melon" class="button_menu_plantes" type="button" value="Planter un melon" style="display:none;"/>
+					</div>
+					
+					<div>
+						<input id="menu_select_plantes_carotte" class="button_menu_plantes" type="button" value="Planter des carottes" style="display:none;"/>
+					</div>
+					<input type="button" value="Termine" class="end_menu_build">
+				</div>
+				<div class="menu_select_options" id="menu_select_batiments_type" style="display:none;">
+					<div>
+						<input id="menu_select_batiments_silo" class="button_menu_batiments" type="button" value="Construire un silo 50$" />
+					</div>
+					<div>
+						<input id="menu_select_batiments_grange" class="button_menu_batiments" type="button" value="Construire une grange 100$" />
+					</div>
+					<div>
+						<input id="menu_select_batiments_chambre" class="button_menu_batiments" type="button" value="Construire une chambre 300$" />
+					</div>
+					<input type="button" value="Termine" class="end_menu_build">
+				</div>
+			</div>
+			<div id="overlay"></div>
+			<div id="error"></div>
+			<div id="valid"></div>
+
+			<div id="users">
+			</div>
+			<div id="messages">
+				<div class="message" id="msgtpl" style="display:none;">
+					<div class="info">
+						<p>{{message}}</p>
+						<span class="date">{{h}}:{{m}}</span>
+					</div>
+				</div>
+			</div>
+
+			<form action="" id="form">
+				<input type="text" id="message_inbox" class="text" />
+				<input type="submit" id="send" value="Envoyer mon message !" class="submit" />
+			</form>	
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://localhost:1337/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/include/pp3diso.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/client.js"></script>
+	<script type="text/javascript" src="js/admin.js"></script>
+</html>

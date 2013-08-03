@@ -1,0 +1,201 @@
+
+#pp3Diso-wait {
+	background-image: url(../images/wait.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width:100%;
+	height:100%;
+}
+
+#pp3Diso-bulle {
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:200px;
+	z-index:800000;
+	padding:5px;
+	box-shadow: 0px 0px 5px #000;
+	-moz-box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow: 0px 0px 5px #000;
+	font-size:11px;
+	background-color: #F0FFFF;
+	border: 1px solid white;
+	color: black;
+	background: #7abcff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+}
+
+/* ------------------------------------------- */
+
+.pp3diso-sol {
+	width:1px;
+	height:1px;
+	display:block;
+	overflow:hidden;
+	position:absolute;
+}
+
+.pp3diso_users {
+	position:absolute;
+}
+
+/* ---------------------- interface utilisateur -------------------- */
+
+#loupe-plus {
+	position:absolute;
+	bottom:80px;
+	left:5px;
+	width:44px;
+	height:45px;
+}
+#loupe-moins {
+	position:absolute;
+	bottom:5px;
+	left:80px;
+	width:44px;
+	height:45px;
+}
+
+.fleche {
+	position:absolute;
+	background-image: url(../images/fleches.png);
+	background-repeat: no-repeat;
+}
+
+#pp3diso-fleche-n {
+	width:50px;
+	height:25px;
+	background-position: -50px 0px;
+	top:5px;
+	left:220px;
+}
+#pp3diso-fleche-s {
+	width:50px;
+	height:25px;
+	background-position: -50px -25px;
+	bottom:5px;
+	left:220px;
+}
+#pp3diso-fleche-e {
+	width:25px;
+	height:50px;
+	background-position: -75px 0px;
+	top:156px;
+	right:5px;
+}
+#pp3diso-fleche-o {
+	width:25px;
+	height:50px;
+	background-position: -50px 0px;
+	top:156px;
+	left:5px;
+}
+#pp3diso-fleche-se {
+	width:25px;
+	height:25px;
+	background-position: -25px 0px;
+	top:5px;
+	right:5px;
+}
+#pp3diso-fleche-so {
+	width:25px;
+	height:25px;
+	background-position: 0px 0px;
+	top:5px;
+	left:5px;
+}
+#pp3diso-fleche-ne {
+	width:25px;
+	height:25px;
+	background-position: -25px -25px;
+	bottom:5px;
+	right:5px;
+}
+#pp3diso-fleche-no {
+	width:25px;
+	height:25px;
+	background-position: 0px -25px;
+	bottom:5px;
+	left:5px;
+}
+
+/* ------------------------------------------- */
+
+#ppISO {
+	border:1px solid #000;
+	position:relative;
+	background-color:#000;
+	width:800px;
+	height:600px;
+	overflow:hidden;
+	z-index: 100;
+}
+
+#pp3diso-win {
+	display:block;
+	padding:10px;
+	text-align:center;
+	font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+	font-size:14px;
+	color:#333;
+	background-color:#fff;
+	border:2px solid #000;
+	
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+	box-shadow: 0px 0px 10px #000;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+}
+
+#pp3diso-close {
+	background-image: url(../images/close.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width:16px;
+	height:16px;
+	position:absolute;
+	right:2px;
+	top:2px;
+	cursor:pointer;
+}
+
+.pp3diso-win-texte p {
+	font-size:14px;
+	margin:5px 0;
+	line-height:18px;
+}
+
+#pp3diso-win-form {
+	overflow:hidden;
+	margin:10px auto;
+}
+
+.pp3diso-win-button {
+	display:inline-block;
+	margin:0 20px;
+	border:1px solid #aaa;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:4px 10px;
+	text-decoration:none;
+	color:#333;
+}
+
+.pp3diso-win-button:hover {
+	background-color:#333;
+	color:#fff;
+}
+
+#pp3diso-win-fond {
+	background-color:#000;
+}
